@@ -38,6 +38,16 @@ android {
             }
         }
     }
+
+    signingConfigs {
+        register("release"){
+            storeFile =file("TestKey.jks")
+            storePassword = "123321"
+            keyAlias = "Test"
+            keyPassword = "123321"
+        }
+    }
+
     buildTypes {
         named("release") {
             minifyEnabled(false)
@@ -45,6 +55,8 @@ android {
                     getDefaultProguardFile("proguard-android-optimize.txt"),
                     "proguard-rules.pro"
             )
+            signingConfig = signingConfigs.getByName("release")
+
         }
         named("debug") {
             applicationIdSuffix = ".debug"
