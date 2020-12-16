@@ -25,7 +25,7 @@
         <item name="toolbarStyle">@style/Widget.Toolbar</item>
         <item name="bottomSheetDialogTheme">@style/Sheet.Bottom</item>
         <item name="android:strokeColor">@android:color/black</item>
-        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/white</item>
         <item name="backgroundColor">@android:color/white</item>
         <item name="colorBackgroundFloating">@color/app_primary_base</item>
         <item name="android:statusBarColor">@android:color/white</item>
