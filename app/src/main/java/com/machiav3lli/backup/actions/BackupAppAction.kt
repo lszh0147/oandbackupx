@@ -79,12 +79,12 @@ open class BackupAppAction(context: Context, shell: ShellHandler) : BaseAppActio
                 Timber.i("$app: Backing up data")
                 var backupCreated = backupData(app, backupInstanceDir)
                 backupBuilder.setHasAppData(backupCreated)
-                if (getDefaultSharedPreferences(context).getBoolean(PREFS_EXTERNALDATA, false)) {
+                if (getDefaultSharedPreferences(context).getBoolean(PREFS_EXTERNALDATA, true)) {
                     Timber.i("$app: Backing up external data")
                     backupCreated = backupExternalData(app, backupInstanceDir)
                     backupBuilder.setHasExternalData(backupCreated)
                 }
-                if (getDefaultSharedPreferences(context).getBoolean(PREFS_OBBDATA, false)) {
+                if (getDefaultSharedPreferences(context).getBoolean(PREFS_OBBDATA, true)) {
                     Timber.i("$app: Backing up obb files")
                     backupCreated = backupObbData(app, backupInstanceDir)
                     backupBuilder.setHasObbData(backupCreated)

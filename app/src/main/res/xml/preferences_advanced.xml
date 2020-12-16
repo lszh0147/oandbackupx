@@ -60,7 +60,7 @@
         app:iconSpaceReserved="false" />
 
     <androidx.preference.CheckBoxPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:key="killBeforeAction"
         android:summary="@string/prefs_stopcont_summary"
         android:title="@string/prefs_stopcont"

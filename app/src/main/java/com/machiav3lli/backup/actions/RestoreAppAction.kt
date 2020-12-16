@@ -80,13 +80,13 @@ open class RestoreAppAction(context: Context, shell: ShellHandler) : BaseAppActi
         val backupDir = StorageFile.fromUri(context, backupLocation)
         restoreData(app, backupProperties, backupDir)
         val prefs = getDefaultSharedPreferences(context)
-        if (backupProperties.hasExternalData && prefs.getBoolean(PREFS_EXTERNALDATA, false)) {
+        if (backupProperties.hasExternalData && prefs.getBoolean(PREFS_EXTERNALDATA, true)) {
             Timber.i("[${backupProperties.packageName}] Restoring app's external data")
             restoreExternalData(app, backupProperties, backupDir)
         } else {
             Timber.i("[${backupProperties.packageName}] Skip restoring app's external data; not part of the backup or disabled")
         }
-        if (backupProperties.hasObbData && prefs.getBoolean(PREFS_OBBDATA, false)) {
+        if (backupProperties.hasObbData && prefs.getBoolean(PREFS_OBBDATA, true)) {
             Timber.i("[${backupProperties.packageName}] Restoring app's obb files")
             restoreObbData(app, backupProperties, backupDir)
         } else {

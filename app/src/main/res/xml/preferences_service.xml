@@ -48,14 +48,14 @@
         app:iconSpaceReserved="false" />
 
     <androidx.preference.CheckBoxPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:key="backupExternalData"
         android:summary="@string/prefs_externaldata_summary"
         android:title="@string/prefs_externaldata"
         app:iconSpaceReserved="false" />
 
     <androidx.preference.CheckBoxPreference
-        android:defaultValue="false"
+        android:defaultValue="true"
         android:key="backupObbData"
         android:summary="@string/prefs_obbdata_summary"
         android:title="@string/prefs_obbdata"
